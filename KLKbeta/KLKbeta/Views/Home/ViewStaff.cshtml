@@ -1,0 +1,64 @@
+﻿@model IEnumerable<KLKbeta.Models.ModelForDB.ModelPeople.Staff>
+
+@{
+    ViewBag.Title = "ViewStaff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewStaff</h2>
+
+<p>
+    @Html.ActionLink("Добавить сотрудника", "ViewAddStaff", "Home", routeValues: null, htmlAttributes: new { id = "Staff" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Position.PositionStaff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subdivision.NameSubdivision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfEmployee.NameType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonnelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position.PositionStaff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subdivision.NameSubdivision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeOfEmployee.NameType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonnelNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

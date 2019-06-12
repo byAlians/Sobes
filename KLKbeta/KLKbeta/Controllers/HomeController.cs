@@ -22,14 +22,14 @@ namespace KLKbeta.Controllers
             return View(new Staff());
         }
 
-        public ActionResult About()
+        public ActionResult ViewStaff()
         {
-            ViewBag.Message = "Your application description page.";
+            IEnumerable<Staff> getStaff = db.Staffs.ToList<Staff>();
 
-            return View();
+            return View(getStaff);
         }
 
-        public ActionResult Contact()
+        public ActionResult ViewTable()
         {
             ViewBag.Message = "Your contact page.";
 

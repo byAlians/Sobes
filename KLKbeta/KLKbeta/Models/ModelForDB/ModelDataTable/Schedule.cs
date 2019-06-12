@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 using KLKbeta.Models.ModelForDB.ModelPeople;
 
 
@@ -13,8 +14,9 @@ namespace KLKbeta.Models.ModelForDB.ModelDataTable
         public DateTime Date { get; set; }
 
         public int WorkTimeId { get; set; }
+        [Display(Name = "Смены")]
         public WorkTime WorkTime { get; set; }
-        
+
 
         public ICollection<Staff> Staffs { get; set; }
         public Schedule()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 using KLKbeta.Models.ModelForDB.ModelSubdivision;
 using KLKbeta.Models.ModelForDB.ModelDataTable;
 
@@ -9,6 +10,7 @@ namespace KLKbeta.Models.ModelForDB.ModelPeople
 {
     public class Staff:People
     {
+        [Display(Name = "Персональный номер")]
         public int PersonnelNo { get; set; }
 
         public int TypeOfEmployeeId { get; set; }
