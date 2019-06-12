@@ -188,6 +188,9 @@
     <Compile Include="Models\ModelForDB\ModelPeople\Staff.cs" />
     <Compile Include="Models\ModelForDB\ModelSubdivision\Building.cs" />
     <Compile Include="Models\ModelForDB\ModelSubdivision\Subdivision.cs" />
+    <Compile Include="Models\ModelForDB\Position.cs" />
+    <Compile Include="Models\ModelForDB\TypeOfEmployee.cs" />
+    <Compile Include="Models\ModelForDB\WorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

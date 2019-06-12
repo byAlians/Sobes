@@ -17,6 +17,9 @@ namespace KLKbeta.Models.ModelForDB.ContextFile
 
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Subdivision> Subdivisions { get; set; }
+        public DbSet<TypeOfEmployee> TypeOfEmployees { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<WorkTime> WorkTimes { get; set; }
         public DbSet<Fact> Facts { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
     }

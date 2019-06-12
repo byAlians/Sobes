@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using KLKbeta.Models.ModelForDB.ModelPeople;
 
-namespace KLKbeta.Models.ModelForDB.ModelSubdivision
+namespace KLKbeta.Models.ModelForDB
 {
-    public class Subdivision:Building
+    public class Position
     {
-        public int SubdivisionNumber { get; set; }
-        public string NameSubdivision { get; set; }
+        public int Id { get; set; }
+        public string PositionStaff { get; set; }
 
         public ICollection<Staff> Staff { get; set; }
 
-        public Subdivision()
+        public Position()
         {
             Staff = new List<Staff>();
         }
