@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using KLKbeta.Models.ModelForDB.ModelPeople
+using KLKbeta.Models.ModelForDB.ModelPeople;
 
 namespace KLKbeta.Models.ModelForDB
 {
