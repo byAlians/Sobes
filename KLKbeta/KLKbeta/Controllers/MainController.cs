@@ -20,12 +20,12 @@ namespace KLKbeta.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(db.GetList());
         }
 
         public ActionResult Staff()
         {
-            return View(db.GetList());
+            return View();
         }
 
         protected override void Dispose(bool disposing)

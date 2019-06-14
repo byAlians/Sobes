@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "DataTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+
+                </th>
+                @foreach (var item in ViewBag.CDays)
+                {
+                    <th>
+                        @item
+                    </th>
+                }
+                </tr>
+            </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Staff)
+            {
+            <tr>
+                <td>@item.Name</td>
+                @foreach (var item1 in ViewBag.CDays)
+                {
+                    <td>
+                       <select>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                       </select>
+                    </td>
+                }
+            </tr>
+
+            }
+            </tbody>
+
+    </table>
+

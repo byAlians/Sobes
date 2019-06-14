@@ -3,50 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using KLKbeta.Models.ModelForDB.ContextFile;
+using KLKbeta.Models.ModelForDB.ModelDataTable;
+using KLKbeta.DependencyInjection.Release;
+using KLKbeta.DependencyInjection;
+using KLKbeta.Models.Count;
 using KLKbeta.Models.ModelForDB.ModelPeople;
 
 namespace KLKbeta.Controllers
 {
     public class HomeController : Controller
     {
-        ContextKLK db = new ContextKLK();
-        public ActionResult ViewAddStaff()
+        IRepository<Fact> db;
+        IRepository<Staff> dbStaff;
+        public HomeController()
         {
-            IEnumerable<SelectListItem> getTypeOfEmployee = new SelectList(db.TypeOfEmployees.AsEnumerable(), "Id", "NameType");
-            IEnumerable<SelectListItem> getSubdivision = new SelectList(db.Subdivisions.AsEnumerable(), "Id", "NameSubdivision");
-            IEnumerable<SelectListItem> getPosition = new SelectList(db.Positions.AsEnumerable(), "Id", "PositionStaff");
-            ViewBag.Position = getPosition;
-            ViewBag.TypeOfEmployee = getTypeOfEmployee;
-            ViewBag.Subdivision = getSubdivision;
-            return View(new Staff());
+            db = new SQLTableRepository();
+            dbStaff = new SQLStaffRepository();
+
         }
 
-        public ActionResult ViewStaff()
+        public ActionResult DataTable()
         {
-            IEnumerable<Staff> getStaff = db.Staffs.ToList<Staff>();
+            CountDays Cdays=new CountDays();
+            ViewBag.CDays=Cdays.CountDaysInMonth(2019, 2);
+            ViewBag.Staff = dbStaff.GetList();
 
-            return View(getStaff);
+          return  View();
         }
 
-        public ActionResult ViewTable()
+        protected override void Dispose(bool disposing)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult AddStaff(Staff staffs)
-        {
-            using (ContextKLK db = new ContextKLK())
-            {
-                Staff staff = staffs;
-                db.Staffs.Add(staff);
-                db.SaveChanges();
-
-            }
-            return RedirectToAction("About");
+            db.Dispose();
+            base.Dispose(disposing);
         }
     }
+
 }

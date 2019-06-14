@@ -11,9 +11,9 @@
 </head>
 <body>
     <header>
-        @Html.ActionLink("Сотрудники", "ViewStaff", "Home", routeValues: null, htmlAttributes: new { })
-        @Html.ActionLink("Добавить сотрудника", "ViewAddStaff", "Home", routeValues: null, htmlAttributes: new { })
-        @Html.ActionLink("Расписание", "ViewTable", "Home", routeValues: null, htmlAttributes: new { })
+        @Html.ActionLink("Сотрудники", "Staff", "Main", routeValues: null, htmlAttributes: new { })
+        @Html.ActionLink("Добавить сотрудника", "AddStaff", "Main", routeValues: null, htmlAttributes: new { })
+        @Html.ActionLink("Расписание", "ViewTable", "Main", routeValues: null, htmlAttributes: new { })
     </header>
         @RenderBody()
         <hr />

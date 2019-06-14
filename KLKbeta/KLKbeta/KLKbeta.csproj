@@ -187,6 +187,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DependencyInjection\IRepository.cs" />
     <Compile Include="DependencyInjection\Release\SQLStaffRepository.cs" />
+    <Compile Include="DependencyInjection\Release\SQLTableRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +202,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Count\CountDays.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ModelForDB\ContextFile\ContextKLK.cs" />
@@ -312,11 +314,13 @@
     <Content Include="Views\Home\ViewAddStaff.cshtml" />
     <Content Include="Views\Home\ViewStaff.cshtml" />
     <Content Include="Views\Home\ViewTable.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Main\AddStaff.cshtml" />
+    <Content Include="Views\Home\DataTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="NewFolder1\" />
-    <Folder Include="Views\Main\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
