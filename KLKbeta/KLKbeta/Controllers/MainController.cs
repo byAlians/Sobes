@@ -27,5 +27,11 @@ namespace KLKbeta.Controllers
         {
             return View(db.GetList());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }
