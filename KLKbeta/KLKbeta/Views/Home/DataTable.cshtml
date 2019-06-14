@@ -1,10 +1,13 @@
 ﻿
+
 @{
     ViewBag.Title = "DataTable";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <table class="table">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <table id="FactTable">
         <thead>
             <tr>
                 <th>
@@ -25,7 +28,7 @@
                 <td>@item.Name</td>
                 @foreach (var item1 in ViewBag.CDays)
                 {
-                    <td>
+                    <td id="@item1">
                        <select>
                            <option>1</option>
                            <option>2</option>
@@ -39,4 +42,5 @@
             </tbody>
 
     </table>
+<script src="/JS/ParseDT.js"></script>
 
